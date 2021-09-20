@@ -4,25 +4,45 @@
 <head>
     <title>John Denero</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-/*         audio::-webkit-media-controls-timeline,
-video::-webkit-media-controls-timeline {
-    display: none;
+.video-background {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
-audio::-webkit-media-controls,
-video::-webkit-media-controls {
-    display: none;
-} */
-    </style>
-</head>
 
-<body>
-    <video width="500" loop>
+.video-background iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+}
 
-    <source src="denero_promo_final.mp4"
-            type="video/mp4">
+@media (min-aspect-ratio: 16/9) {
+  .video-background iframe {
+    /* height = 100 * (9 / 16) = 56.25 */
+    height: 56.25vw;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-background iframe {
+    /* width = 100 / (9 / 16) = 177.777777 */
+    width: 177.78vh;
+  }
+}
+</style>
 
-    Sorry, your browser doesn't support embedded videos.
-    </video>
+<div class="video-background">
+  <iframe src="https://www.youtube.com/embed/jYS5v54jvgY?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=0" frameborder="0" allowfullscreen></iframe>
+</div>
+    
+    
+    
+    
+    
 </body>
 </html?
